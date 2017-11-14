@@ -1,0 +1,11 @@
+<h1>The World's Best Beers</h1>
+<p><%= link_to "Add a new beer!", new_article_path %></p>
+<% @articles.each do |a| %>
+<h3><%= a.title %></h3>
+<p><%= a.content %></p>
+<p><%= link_to "More Details", article_path(a) %></p>
+<p><%= link_to "Edit Details", edit_article_path(a) %></p>
+<p><%= link_to "Drink(Destroy)Beer", article_path(a),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></p>
+<% end %>
